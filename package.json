@@ -1,6 +1,6 @@
 {
   "name": "obsidian-minder-nexus",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Build a semantic knowledge graph with bidirectional links and custom ontologies.",
   "main": "main.js",
   "scripts": {

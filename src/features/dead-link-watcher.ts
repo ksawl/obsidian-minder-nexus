@@ -1,4 +1,4 @@
-import { TFile, Notice } from 'obsidian';
+import { TFile, TFolder, Notice } from 'obsidian';
 import NexusPlugin from '../main';
 import { ParserLogic } from './semantic-engine/logic';
 
@@ -9,12 +9,25 @@ export class DeadLinkWatcher {
 		this.plugin = plugin;
 	}
 
+	private getMarkdownFilesRecursive(folder: TFolder): TFile[] {
+		const files: TFile[] = [];
+		for (const child of folder.children) {
+			if (child instanceof TFile && child.extension === 'md') {
+				files.push(child);
+			} else if (child instanceof TFolder) {
+				files.push(...this.getMarkdownFilesRecursive(child));
+			}
+		}
+		return files;
+	}
+
 	/**
 	 * H4 FIX: Оптимизированное сканирование с cachedRead и батчевой обработкой
 	 */
 	async scanAll(): Promise<{ file: TFile, deadLink: { targetPath: string, type: string } }[]> {
 		const deadLinks: { file: TFile, deadLink: { targetPath: string, type: string } }[] = [];
-		const files = this.plugin.app.vault.getMarkdownFiles();
+		const root = this.plugin.app.vault.getRoot();
+		const files = this.getMarkdownFilesRecursive(root);
 		const trustedTypes = this.plugin.settings.semantic.trustedTypes;
 		const options = this.plugin.settings.semantic.syntaxOptions;
 		

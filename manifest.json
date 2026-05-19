@@ -1,7 +1,7 @@
 {
 	"id": "minder-nexus",
 	"name": "Minder Nexus",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"minAppVersion": "1.7.2",
 	"description": "Build a semantic knowledge graph with bidirectional links and custom ontologies.",
 	"author": "Kharizma & Latreia",
