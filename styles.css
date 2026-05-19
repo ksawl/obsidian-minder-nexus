@@ -6,9 +6,14 @@
     border-radius: 4px;
     background: linear-gradient(135deg, rgba(123, 31, 162, 0.1), rgba(103, 58, 183, 0.1));
     border: 1px solid rgba(123, 31, 162, 0.3);
-    text-decoration: none !important;
+    text-decoration: none;
     transition: all 0.2s ease-in-out;
     font-weight: 500;
+}
+
+.markdown-preview-view .internal-link.nexus-semantic-link,
+.markdown-rendered .internal-link.nexus-semantic-link {
+    text-decoration: none;
 }
 
 .nexus-semantic-link:hover {
@@ -83,10 +88,14 @@
 
 /* Dead Links Styling */
 .nexus-link-dead {
-    border-color: rgba(244, 67, 54, 0.8) !important;
-    background: rgba(244, 67, 54, 0.1) !important;
-    color: #f44336 !important;
     animation: nexus-pulse 2s infinite;
+}
+
+.markdown-preview-view .internal-link.nexus-semantic-link.nexus-link-dead,
+.markdown-rendered .internal-link.nexus-semantic-link.nexus-link-dead {
+    border-color: rgba(244, 67, 54, 0.8);
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
 }
 
 .nexus-badge-widget.is-dead {
@@ -111,14 +120,14 @@
 
 .nexus-link-replaced .internal-link {
     color: var(--link-color);
-    text-decoration-line: var(--link-decoration);
+    text-decoration: var(--link-decoration);
     cursor: pointer;
     transition: color 0.15s ease;
 }
 
 .nexus-link-replaced .internal-link:hover {
     color: var(--link-color-hover);
-    text-decoration-line: var(--link-decoration-hover, underline);
+    text-decoration: var(--link-decoration-hover, underline);
 }
 
 .nexus-link-replaced .internal-link.is-unresolved {
