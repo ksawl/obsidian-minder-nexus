@@ -1,6 +1,6 @@
-# Contributing to Nexus
+# Contributing to Minder Nexus
 
-Thank you for your interest in contributing to Nexus! This document outlines the guidelines and steps to help you get started with contributing to this Obsidian plugin.
+Thank you for your interest in contributing to Minder Nexus! This document outlines the guidelines and steps to help you get started with contributing to this Obsidian plugin.
 
 ## Developer Guidelines
 
@@ -23,10 +23,7 @@ To ensure code quality and consistency, please follow these guidelines:
 We adhere strictly to the Obsidian Developer Policies. Before submitting code, please ensure:
 
 * All UI texts, titles, descriptions, and placeholders use **Sentence case** (e.g., "Semantic engine" instead of "Semantic Engine").
-* Run ESLint to ensure there are no formatting or policy issues:
-  ```bash
-  npm run lint
-  ```
+* Run ESLint/TypeScript check to ensure there are no formatting or policy issues.
 * Test your changes locally inside Obsidian to verify they do not introduce memory leaks or unexpected exceptions.
 
 ### Pull Request Process
